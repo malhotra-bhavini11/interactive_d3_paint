@@ -1,0 +1,93 @@
+<!DOCTYPE html> <!--before startwith the the data we need to build the skeleton for the code-->
+<!--html and css ref: https://scrimba.com/learn-html-and-css-c0p?via=mdn; did that course-->
+<!--ref: https://www.codecademy.com/learn/learn-html; and this one and ones below-->
+<!-- ref: https://www.freecodecamp.org/learn/data-visualization/#data-visualization-with-d3, https://www.freecodecamp.org/learn/responsive-web-design-v9/ and some of this one https://www.freecodecamp.org/learn/javascript-v9/-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!---importing d3 v7 like we always do for hw, just copied line from prev hw for quickness-->
+    <link rel="stylesheet" href="style.css"> <!--linking our stylesheet so we can format in css-->
+
+
+</head>
+
+<body>
+    <div id="viz-container"></div> <!--first, we need to create a full screen svg container in which the viz will be-->
+    <!---now we should build the UI/overlay elements that sit on top of the viz -->
+
+    <div id="detail-panel"> <!--super imp to def id since im gonna use it to select elements in d3 later-->
+        <!---so first container for detail panel, which is part where img, artwork title, artist name and other info will show up -->
+        <div class="panel-header"> <!--assign class so everything has consistent sizing ans styling-->
+            <div>
+                <h2 id="panel-title">Artwork Title</h2>
+                <!--bc i want the painitng title and artist name on top, then img , then details so i've ordered that way-->
+                <h3 id="panel-artist">Artist Name</h3>
+                <!--i was thinking of putting a line to close this panel if needed but i alr checked size of panel with even the longest paintings and it was fine-->
+                <!--so i ended up not doing it-->
+            </div>
+        </div>
+
+        <img id="panel-image" src="" alt="Preview of Painitng">
+        <!--has to dynamically update the contents of svg depedning on img id from dataset-->
+
+        <div id="panel-details"></div> <!---where other info abt painting comes into play-->
+    </div>
+
+    <button id="resetBtn" class="btn">← Back to Palette</button>
+    <!---part 2, adding button we can go back and forth between palette view and bubble view-->
+    <!--button text should say: ← Back to Palette -->
+    <!--ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/button-->
+    <!--done by attaching a click listener event-> clears sel and hides elements-->
+
+
+    <div id="tooltip" class="tooltip"></div>
+    <!--part3. have to integrate the tooltip, ref to reference in css file for documentation i based my code off of-->
+    <div id="loading">Loading Data...</div>
+    <!--part 4.ok so here, tried to follow responsiveness, if user clicks on blob of col and its loading, a msg should show up-->
+    <!--same if the page itself is taking time to load palette view-->
+
+    <div id="vizLegend" class="legend-container"> <!---part 5. create container tag to hold main legend panel/block-->
+        <!--ref used for basic: https://d3-graph-gallery.com/graph/custom_legend.html-->
+        <!-- other ref used: https://d3-legend.susielu.com/#size-->
+        <!--ref: https://www.youtube.com/watch?v=XmVPHq4NhMA; Color and Size Legends with D3.js-->
+        <!--so the price was mostly centered on the lower end of the spectrum after sorting for movement-->
+        <!--thus basically taking the lower end of price, slitting that into bins, so wse can see more rel variation-->
+        <div class="legend-title">Price Estimate</div>
+        <!--putting header so leg has title, with class used in css to style-->
+        <div class="legend-item"><span class="legend-circle" style="width: 12px; height: 12px;"></span><span
+                class="legend-label">&lt; $10k</span></div>
+        <!--leg entry 1 w circle and label, using span to create circle inline-->
+        <div class="legend-item"><span class="legend-circle" style="width: 25px; height: 25px;"></span><span
+                class="legend-label">$10k – $25k</span></div>
+        <!--repeat prev but increase style width & height so there's a flow/trend-->
+        <div class="legend-item"><span class="legend-circle" style="width: 45px; height: 45px;"></span><span
+                class="legend-label">$25k – $50k</span></div> <!--bin 3-->
+        <div class="legend-item"><span class="legend-circle" style="width: 75px; height: 75px;"></span><span
+                class="legend-label">&gt; $50k</span></div> <!--bin 4-->
+    </div>
+
+
+    <div id="info-panel"> <!---part 6. again, start with container to hold infro block-->
+        <h4>How to Explore</h4> <!--title sect-->
+        <ul> <!--using unordered lsit to show each aspect of viz's abilties; for visibility rule -->
+            <li><strong>Hover</strong> over circles to see artwork details.</li> <!--adding strong tag for emph-->
+            <li><strong>Click</strong> a circle to trace that artist's career path.</li> <!--abil 2-->
+            <li><strong>Size</strong> represents the estimated price.</li> <!--abil 3-->
+            <li><strong>Image Panel</strong> should appear once you click on a point.</li><!--abil 4-->
+        </ul>
+    </div>
+
+    <div id="palette-title"> <!--fun fact, i actually did this last (part 7)-->
+        <!--but we have to create a cont for the title of the viz-->
+        <h1>Art to Auction House</h1> <!--primary title-->
+        <h2>Exploratory Data Visualization of Art Auction Prices</h2> <!--sec title/sub heading -->
+        <p>Select a color blob to explore the movement</p>
+        <!--instr bc its custom so users might not know how to interact with it-->
+    </div>
+    <script src="bmalhot4.js"></script>
+</body>
+
+</html>
