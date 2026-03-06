@@ -32,7 +32,7 @@ Once inside the Splatter View, you can interact with the individual data points:
 **Tracing the Artist's Career:**
 If the dataset contains multiple paintings by the selected artist within that movement, clicking their artwork triggers a career trace. A smooth, animated line will draw across the screen, connecting the artist's works and tracing their career path chronologically from their earliest painting to their latest.
 
-![Career Trace Animation](images/trace_career.gif)
+![Career Trace Animation](images/Trace_career.gif)
 
 ![Expressionism Career Trace](images/trace_career_expressionism.png)
 
