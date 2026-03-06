@@ -3,7 +3,7 @@
 
 This project is a bespoke, highly interactive data visualization built with D3.js that explores art auction prices across various artistic movements. Moving away from traditional chart formats, this visualization uses a thematic, custom-illustrated painter's palette and dynamic paint splatter boundary zones to create an engaging data exploration experience.
 
-![Main Palette View](images/Screenshot_50.png)
+![Main Palette View](images/main_screen.png)
 
 ## Technical Stack
 * **Frontend:** HTML5, CSS3, Vanilla JavaScript
@@ -16,7 +16,7 @@ This project is a bespoke, highly interactive data visualization built with D3.j
 When you first load the visualization, you are presented with a wooden painter's palette containing different blobs of color. Each color represents a specific art movement (e.g., Pop Art, Expressionism).
 * **Hover** over any paint blob to reveal a tooltip showing the name of the movement and the total number of artworks in the dataset for that category.
 
-![Hovering over a movement](images/Screenshot_51.png)
+![Hovering over a movement](images/main_tooltip.png)
 
 ### 2. The Splatter View (Bubble Chart)
 Click on a color blob to dive into that specific movement. The palette will fade away, and a large paint splatter will expand on the screen. 
@@ -32,8 +32,9 @@ Once inside the Splatter View, you can interact with the individual data points:
 **Tracing the Artist's Career:**
 If the dataset contains multiple paintings by the selected artist within that movement, clicking their artwork triggers a career trace. A smooth, animated line will draw across the screen, connecting the artist's works and tracing their career path chronologically from their earliest painting to their latest.
 
-![Expressionism Career Trace](images/Screenshot_49.png)
-![Pop Art Career Trace](images/image_6c940e.jpg)
+![Career Trace Animation](images/career_trace.gif)
+
+![Expressionism Career Trace](images/trace_career_expressionism.png)
 
 ### 4. Resetting the View
 To explore a different art movement, simply click the "<- Back to Palette" button in the top left corner. The view will gracefully transition back to the main palette, allowing you to select a new color and generate a fresh set of data points.
