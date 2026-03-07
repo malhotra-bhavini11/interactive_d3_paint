@@ -40,3 +40,17 @@ If the dataset contains multiple paintings by the selected artist within that mo
 
 ### 4. Resetting the View
 To explore a different art movement, simply click the "<- Back to Palette" button in the top left corner. The view will gracefully transition back to the main palette, allowing you to select a new color and generate a fresh set of data points.
+
+## Setup and Installation
+
+Because this project dynamically fetches local files (the dataset CSV and artwork images), it must be run through a local web server to avoid browser CORS (Cross-Origin Resource Sharing) security restrictions. It cannot be run by simply double-clicking the `index.html` file.
+
+**To run this locally:**
+
+1. Clone this repository to your local machine:
+   `git clone https://github.com/your-username/interactive_d3_paint.git`
+2. Open the project folder in your preferred code editor (e.g., VS Code).
+3. Start a local development server:
+   * **If using VS Code:** Install the "Live Server" extension. Right-click the `index.html` file inside the `src` folder and select "Open with Live Server".
+   * **If using Python:** Open your terminal, navigate to the `src` directory, and run `python -m http.server 8000`. Then open `http://localhost:8000` in your browser.
+4. The visualization will load in your default web browser.
