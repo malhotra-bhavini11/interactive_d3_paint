@@ -34,6 +34,8 @@ If the dataset contains multiple paintings by the selected artist within that mo
 
 ![Career Trace Animation](images/Trace_career.gif)
 
+*Below is a static snapshot showing a completed career trace for an artist within the Expressionism movement:*
+
 ![Expressionism Career Trace](images/trace_career_expressionism.png)
 
 ### 4. Resetting the View
